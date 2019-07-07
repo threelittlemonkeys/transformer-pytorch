@@ -1,6 +1,4 @@
-# The Transformer in PyTorch
-
-A minimal PyTorch implementation of the Transformer for sequence to sequence learning.
+# The Transformer in PyTorch A minimal PyTorch implementation of the Transformer for sequence to sequence learning.
 
 Supported features:
 - Mini-batch training with CUDA
@@ -30,6 +28,8 @@ python predict.py model.epochN vocab.src vocab.tgt test_data
 ```
 
 ## References
+
+Rami Al-Rfou, Dokook Choe, Noah Constant, Mandy Guo, Llion Jones. [Character-Level Language Modeling with Deeper Self-Attention.](https://arxiv.org/abs/1808.04444) arXiv:1808.04444.
 
 Jimmy Lei Ba, Jamie Ryan Kiros, Geoffrey E. Hinton. 2016. [Layer Normalization.](https://arxiv.org/abs/1607.06450) arXiv:1607.06450.
 
