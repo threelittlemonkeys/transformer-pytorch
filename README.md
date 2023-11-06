@@ -4,6 +4,7 @@ A minimal PyTorch implementation of the Transformer for sequence to sequence lea
 
 Supported features:
 - Mini-batch training with CUDA
+- Pre layer normalization
 
 ## Usage
 
@@ -40,3 +41,7 @@ Zihang Dai, Zhilin Yang, Yiming Yang, Jaime Carbonell, Quoc V. Le, Ruslan Salakh
 Hideya Mino, Masao Utiyama, Eiichiro Sumita, Takenobu Tokunaga. 2017. [Key-value Attention Mechanism for Neural Machine Translation.](http://aclweb.org/anthology/I17-2049) In Proceedings of the 8th International Joint Conference on Natural Language Processing, pp. 290-295.
 
 Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin. 2017. [Attention Is All You Need.](https://arxiv.org/abs/1706.03762) In NIPS.
+
+Qiang Wang, Bei Li, Tong Xiao, Jingbo Zhu, Changliang Li, Derek F. Wong, Lidia S. Chao. 2019. [Learning Deep Transformer Models for Machine Translation.](https://arxiv.org/abs/1906.01787) In ACL 2019.
+
+Ruibin Xiong, Yunchang Yang, Di He, Kai Zheng, Shuxin Zheng, Chen Xing, Huishuai Zhang, Yanyan Lan, Liwei Wang, Tie-Yan Liu. 2020. [On Layer Normalization in the Transformer Architecture.](https://arxiv.org/abs/2002.04745) In ICML 2020.
