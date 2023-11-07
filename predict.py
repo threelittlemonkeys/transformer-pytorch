@@ -54,9 +54,6 @@ def run_model(model, data, y_itw):
                     i //= BEAM_SIZE
                     print("attn[%d] =" % i)
                     print(mat2csv(batch.attn[i]), end = "\n\n")
-                    if COPY:
-                        print("copy[%d] =" % i)
-                        print(mat2csv(batch.copy[i][:-1]), end = "\n\n")
 
             for i, (x0, y0, y1) in enumerate(zip(batch.x0, batch.y0, batch.y1)):
                 if not i % BEAM_SIZE: # use the best candidate from each beam

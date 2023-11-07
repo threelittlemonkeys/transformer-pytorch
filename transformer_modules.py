@@ -32,6 +32,7 @@ class mh_attn(nn.Module): # multi-head attention
     def __init__(self):
 
         super().__init__()
+        self.W = None # attention weights
 
         # architecture
         self.norm = nn.LayerNorm(EMBED_SIZE) # pre-layer normalization
@@ -43,9 +44,9 @@ class mh_attn(nn.Module): # multi-head attention
 
     def sdp_attn(self, q, k, v, mask): # scaled dot-product attention
 
-        a = q.matmul(k.transpose(2, 3)) / np.sqrt(DK) # [B, NUM_HEADS, L, L]
+        a = q.matmul(k.transpose(2, 3)) / np.sqrt(DK) # compatibility function
         a = a.masked_fill(mask, -10000)
-        a = F.softmax(a, 3)
+        a = self.W = F.softmax(a, 3) # attention weights [B, NUM_HEADS, L, L]
         a = a.matmul(v) # [B, NUM_HEADS, L, DV]
 
         return a

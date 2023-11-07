@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-UNIT = "char" # unit of tokenization (char, word, sent)
+UNIT = "word" # unit of tokenization (char, word, sent)
 MIN_LEN = 1 # minimum sequence length for training
 MAX_LEN = 50 # maximum sequence length for training and inference
 SRC_VOCAB_SIZE = 50000 # source vocabulary size (0: limitless)
@@ -22,10 +22,9 @@ LEARNING_RATE = 2e-4
 BEAM_SIZE = 1
 BATCH_SIZE = 64
 
-VERBOSE = 0
+VERBOSE = 0 # 0: None, 1: attention heatmap, 2: beam search
 EVAL_EVERY = 10
 SAVE_EVERY = 10
-SAVE_LOSS = False
 NUM_DIGITS = 4 # number of decimal places to print
 
 PAD, PAD_IDX = "<PAD>", 0 # padding
