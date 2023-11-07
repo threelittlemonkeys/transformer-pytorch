@@ -4,7 +4,7 @@ A minimal PyTorch implementation of the Transformer for sequence to sequence lea
 
 Supported features:
 - Mini-batch training with CUDA
-- Pre layer normalization
+- Pre layer normalization (Wang et al 2019)
 
 ## Usage
 

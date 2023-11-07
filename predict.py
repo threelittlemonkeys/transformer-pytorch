@@ -37,22 +37,14 @@ def run_model(model, data, y_itw):
 
             model.dec.M = model.enc(xc, xw, x_mask)
             yi = LongTensor([[SOS_IDX]] * b)
-            print(yi.size())
-            # print(torch.cat([yi, yi+1], 1))
 
             while t < MAX_LEN and sum(eos) < len(eos):
-                print(t, "yi", yi)
-                print(t, "yi", yi.size())
                 y_mask = padding_mask(yi, yi) | lookahead_mask(yi, yi)
                 xy_mask = padding_mask(yi, xw)
-                yo = model.dec(yi, y_mask, xy_mask).squeeze(1)
-                print(t, "yo", yo)
-                print(t, "yo", yo.size())
+                yo = model.dec(yi, y_mask, xy_mask)[:, -1]
                 args = (model.dec, batch, y_itw, eos, lens, yo)
                 yo = beam_search(*args, t) if BEAM_SIZE > 1 else greedy_search(*args)
                 yi = torch.cat([yi, yo], 1)
-                print(yi)
-                print(yi.size())
                 t += 1
 
             batch.unsort()
